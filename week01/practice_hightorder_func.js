@@ -101,4 +101,27 @@ filter_total.forEach(element => {
   console.log(`ลูกค้า ${element.customer} มียอดสั่งซื้อ ${element.total} บาท`)
 })//ข้อที่ 4
 
+// orders.map(order => {
+//   let customer = [];
+//   orders.reduce((acc,value) => {
+//     if(!acc[value.customer]){
+//       acc.
+//     }
+//   })
 
+// })
+
+const merged = Object.values(
+  total_order.reduce((acc, order) => {
+    if (!acc[order.customer]) {
+      acc[order.customer] = { customer: order.customer, total: 0 };
+    }
+    acc[order.customer].total += order.total;
+    return acc;
+  }, {})
+);
+
+// เรียงจากมากไปน้อย
+merged.sort((a, b) => b.total - a.total);
+
+console.log(merged);

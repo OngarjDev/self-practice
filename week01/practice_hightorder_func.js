@@ -101,16 +101,6 @@ filter_total.forEach(element => {
   console.log(`ลูกค้า ${element.customer} มียอดสั่งซื้อ ${element.total} บาท`)
 })//ข้อที่ 4
 
-// orders.map(order => {
-//   let customer = [];
-//   orders.reduce((acc,value) => {
-//     if(!acc[value.customer]){
-//       acc.
-//     }
-//   })
-
-// })
-
 const merged = Object.values(
   total_order.reduce((acc, order) => {
     if (!acc[order.customer]) {
@@ -121,7 +111,6 @@ const merged = Object.values(
   }, {})
 );
 
-// เรียงจากมากไปน้อย
+// เรียงจากมากไปน้อย ตามโจทย์
 merged.sort((a, b) => b.total - a.total);
-
-console.log(merged);
+console.log(merged);//ข้อที่ 5

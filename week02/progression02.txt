@@ -1,0 +1,22 @@
+simple.js 
+คือไฟล์ขณะเรียนในคาบ
+ซึ่งผมคิดว่ามันสำคัญมาก ไว้ใช้ทบทวนตอนสอบได้
+สิ่งที่ผมเรียนรู้ในคาบนี้
+1. obj ใช้วิธีการ reference อ้างอิงจาก address memory นั้นหมายความว่า มันไม่ได้เก็บ value โดยตรง ทำให้หากใช้ === หรือ == จะไม่เท่ากัน
+เพราะ obj 2 ตัวไม่ได้มาจาก address memory memory ซึ่งวิธีการเปรียบเทียบ จะอธิบายในภายหลัง(shallow_equality.js)
+2. หากอ้างอิง key เดียวกัน ใน obj เดียวกัน หมายถึงการแทนที่
+3. หากเราทำ objold = {name:"ongarj",age: 15} กำหนดตัวแปร โดยที่ตัวแปรเดิมยังอยู่ จะเป็นการเปลี่ยน address memory ด้วย
+4. function construtor จะมีthis ประกอบด้วย ข้อดีคือ ไม่ต้องกำหนด key เพราะ ประกาศใน construtor แล้ว เราสามารถ new ได้เลย
+5. ใน obj ไม่ต้อง ใส่ age:function(){return "Test"} เปลี่ยนเป็น age(){return "Test"} ได้เลย และนับเป็น key age ด้วย
+6. การเปรียบเทียบ null ที่อาจารย์ recommend 
+    6.1 แปลงเป็นjson   JSON.stringify(emptyObj) === '{}'
+        หมายความว่าแปลงใน obj เป็นstring แล้วมันได้ ปีกกาว่างหรือป่าว
+    6.2 นับความยาว keys ใน obj      Object.keys(emptyObj).length === 0
+7. Json กับ javascript obj ไม่เหมือนกัน json คือ string และ keyของมันต้องมี "" 
+
+----------------------
+shallow_equality.js การบ้าน
+ข้อมูลใน book นั้น key , value เหมือนกัน เพียงแค่ book1 และ book2 มี address memory คนละที่
+function shallowEquality ทำหน้าที่เปรียบเทียบ 2 obj หลักการคือเอา key ออกมา 
+แล้วเอามาเทียบความยาวของkey จากนั้นก็เช็ค value obj ทั้ง 2 ตัวว่าตรงกันหรือไม่
+หากเหมือนกันคือ true หากไม่ตรงกันคือ false

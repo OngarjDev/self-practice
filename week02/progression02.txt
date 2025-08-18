@@ -15,8 +15,12 @@ simple.js
 7. Json กับ javascript obj ไม่เหมือนกัน json คือ string และ keyของมันต้องมี "" 
 
 ----------------------
-shallow_equality.js การบ้าน
+shallow_equality.js **การบ้าน**
 ข้อมูลใน book นั้น key , value เหมือนกัน เพียงแค่ book1 และ book2 มี address memory คนละที่
 function shallowEquality ทำหน้าที่เปรียบเทียบ 2 obj หลักการคือเอา key ออกมา 
 แล้วเอามาเทียบความยาวของkey จากนั้นก็เช็ค value obj ทั้ง 2 ตัวว่าตรงกันหรือไม่
 หากเหมือนกันคือ true หากไม่ตรงกันคือ false
+
+----------------------
+practice_json.js
+ผมคิดว่าเมื่อเราเรียน แปลง json แล้วสิ่งต่อมาคือลองรับ json มาลองแสดงข้อมูล

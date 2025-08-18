@@ -25,16 +25,16 @@ const products = [
   { name: "Tablet", price: 12000, stock: 8 },
 ];
 
-// let stock = products.filter(data => data.stock > 0);
-// console.log(stock)
+let stock = products.filter(data => data.stock > 0);
+console.log(stock)
 
-// let tax = products.map(data => ({ name: data.name, price_tax: data.price * 1.07 }))
-// console.log(tax)
+let tax = products.map(data => ({ name: data.name, price_tax: data.price * 1.07 }))
+console.log(tax)
 
-// let sum_stock = products.reduce((acc, value) => (value.price * value.stock) + acc, 0);
-// console.log(sum_stock)
+let sum_stock = products.reduce((acc, value) => (value.price * value.stock) + acc, 0);
+console.log(sum_stock)
 
-// products.forEach(data => console.log(`สินค้า ${data.name} มีราคา ${data.price} บาท (รวม VAT)`))
+products.forEach(data => console.log(`สินค้า ${data.name} มีราคา ${data.price} บาท (รวม VAT)`))
 
 // โจทย์ผสม Map Filter Reduce Foreach
 const orders = [

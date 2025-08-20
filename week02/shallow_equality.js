@@ -25,3 +25,4 @@ function shallowEquality(object1 , object2){
 }
 
 console.log("shallow equality: " + shallowEquality(book1,book2))
+console.log(Object.is(book1,book2))

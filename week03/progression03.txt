@@ -9,4 +9,5 @@ myapp() {} โดยที่ชื่อมันจะนับเป็น 1 
 ถ้าเราเขียนแค่ชื่อ function เฉยๆ มันจะ console.log ได้ function แต่ถ้าเราใส่ () เพิ่มอีกมันจะreturn เป็น value ของ function
 สิ่งที่ผมได้รู้เพิ่มเติมอีกคือ ถ้าเราส่ง object มันจะส่ง ref แทน value แต่ถ้าเราส่ง int ไปให้ function มันจะตีความว่าคือ premative datatype มันจะส่งค่า valueเลย
 
----
+---function_getfreqofwords.js 
+เป็นโจทย์ ที่อาจารย์ให้ฝึก ความยากค

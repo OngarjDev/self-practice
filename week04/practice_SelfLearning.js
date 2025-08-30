@@ -19,7 +19,7 @@
 //     let need = [...t]
 
 //     let obj_need = {}
-    
+
 //     for (let count_letter of need){
 //         if(Object.keys(obj_need).find(l => l.toLowerCase() === count_letter.toLowerCase())){
 //             obj_need[count_letter] += 1;
@@ -37,11 +37,11 @@
 //                 }
 //             }
 
-            
+
 //         }
 //     }
 
-    
+
 //     let word_min = []
 //     for (let word of result){
 //         if(word.length < word_min.length || word_min === []){
@@ -59,7 +59,7 @@
  * @param {string} t
  * @return {string}
  */
-var minWindow = function(s, t) {
+var minWindow = function (s, t) {
     if (s.length === 0 || t.length === 0) return "";
 
     // 1️⃣ สร้าง map ของตัวอักษรที่ต้องการ
@@ -105,3 +105,8 @@ var minWindow = function(s, t) {
 
     return minSubstring;
 };
+
+
+console.log(minWindow("ADOBECODEBANC", "ABC"))//"BANC"
+console.log(minWindow("a", "a"))//"a"
+console.log(minWindow("a", "aa"))//""

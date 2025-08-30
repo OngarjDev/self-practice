@@ -62,7 +62,6 @@ function doSomething(x) { //x=multiplyl
     return x;//mu1tip1y1(3,5)
 }
 
-console.log("Dsadad");
 const yy= doSomething(multiple1)
 console.log(y(2,4))
 

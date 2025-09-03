@@ -14,7 +14,7 @@
  * @param {string} t
  * @return {string}
  */
-// var minWindow = function(s, t) {
+// var minWindow = function(s, t) { โค้ดต้นแบบที่ผมทำเอง
 //     let letter = [...s]
 //     let need = [...t]
 

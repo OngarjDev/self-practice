@@ -5,7 +5,7 @@ export default function analyzeText(text, keyword) {
     let word_Frequency = {}
     let result = {}
     for (let item of keyword) {
-        want_keyword[item] = (want_keyword[item] || 0) + 1;
+        want_keyword[item.toLowerCase()] = (want_keyword[item.toLowerCase()] || 0) + 1;
     }
 
     result["totalWords"] = word.length;
@@ -18,8 +18,11 @@ export default function analyzeText(text, keyword) {
 
     let windowChars = {};
     let satisfiedCount = 0;
-    let requiredUniqueCount = word.length;
-    let minSubstring = Infinity;
+    let requiredUniqueCount = Object.keys(want_keyword).length;
+    let minSubstring = "";
+    let windowStart = 0;
+    let minLength = Infinity;
+
     for (let windowEnd = 0; windowEnd < word.length; windowEnd++) {
         let charEnd = word[windowEnd].toLowerCase();
         windowChars[charEnd] = (windowChars[charEnd] || 0) + 1;
@@ -32,12 +35,12 @@ export default function analyzeText(text, keyword) {
             let windowLen = windowEnd - windowStart + 1;
             if (windowLen < minLength) {
                 minLength = windowLen;
-                minSubstring = s.slice(windowStart, windowEnd + 1);
+                minSubstring = word.slice(windowStart, windowEnd + 1).join(" ");
             }
 
-            let charStart = s[windowStart];
+            let charStart = word[windowStart].toLowerCase();
             windowChars[charStart]--;
-            if (requiredChars[charStart] && windowChars[charStart] < requiredChars[charStart]) {
+            if (want_keyword[charStart] && windowChars[charStart] < want_keyword[charStart]) {
                 satisfiedCount--;
             }
             windowStart++;
